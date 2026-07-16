@@ -24,6 +24,7 @@ Efetuar Login Completo
     [Documentation]    Fluxo completo: abrir sistema + login + selecionar turno
     [Arguments]    ${usuario}    ${senha}
     Abrir Sistema
+    Aguardar Janela Ativa
     Clicar Em Continuar Servidor
     Fazer Login    ${usuario}    ${senha}
     Selecionar Turno
