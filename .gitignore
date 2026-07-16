@@ -1,0 +1,26 @@
+# Robot Framework outputs
+output/
+log.html
+report.html
+output.xml
+*.log
+
+# Robot/Sikuli artifacts
+Sikuli_java_stdout_*.txt
+Sikuli_java_stderr_*.txt
+sikuli_captured/
+tests/sikuli_captured/
+tests/PIPE
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
