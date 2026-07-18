@@ -13,45 +13,35 @@ Selecionar Cliente
 
     Wait Until Keyword Succeeds    30s    2s    Ativar Janela
     Enviar Teclas    keys={F2}
-    Sleep    1s
 
     Enviar Teclas    ${cliente}
-    Sleep    3s
     Enviar Teclas    {ENTER}
-    Sleep    2s
 
 Carregar Combustivel
     [Arguments]    ${linha}
 
     Wait Until Keyword Succeeds    30s    2s    Ativar Janela
     Enviar Teclas    {HOME}
-    Sleep    300ms
 
     FOR    ${i}    IN RANGE    1    ${linha}
-        Enviar Teclas    {DOWN}
-        Sleep    200ms        
+        Enviar Teclas    {DOWN}        
     END
 
     Enviar Teclas    {ENTER}
-    Sleep    200ms
 
 Acessar Frente de Caixa
 
     Pegar Turno
-    Sleep    2s
 
     # Acessar Frente de Caixa
     wait Until Keyword Succeeds    30s    2s    Ativar Janela
     Enviar Teclas    keys={F4}
-    Sleep    5s
     Enviar Teclas    keys={ENTER}
-    Sleep    2s
 
 Pegar Turno
 
     # Iniciar o aplicativo
     Windows Run    ${APP}
-    Sleep    1s
 
     Control Window    regex:"Configuração de Acesso.*5587"
     Click    name:Continuar
@@ -63,7 +53,6 @@ Pegar Turno
     
     # Aguardar sair do login / abrir tela de turno
     Log To Console    Aguardando pós-login
-    Sleep    5s
     Wait Until Keyword Succeeds    60s    2s    Ativar Janela
 
     # Selecionar o turno do dia (Se existir)
@@ -75,7 +64,6 @@ Pegar Turno
     Send Keys    keys=${data_hoje}
     Send Keys    keys={TAB}
     Send Keys    keys={ENTER}
-    Sleep    2s
 
     Wait Until Keyword Succeeds    60s    2s    Ativar Janela
 
@@ -95,7 +83,6 @@ Pegar Turno
         Enviar Teclas    {ENTER}
         Enviar Teclas    {ENTER}
         Enviar Teclas    {ENTER}
-        Sleep    2s
     END
 
 Confirmar Mensagem 
@@ -137,22 +124,18 @@ Realizar Login
     Send Keys    keys={TAB}
     Send Keys    keys=${SENHA}
     Send Keys    keys={ENTER}
-    Sleep    5s
 
     Wait Until Keyword Succeeds    30s    2s    Ativar Janela
 
     Send Keys    keys={ENTER}
-    Sleep        2s
 
     Wait Until Keyword Succeeds    30s    2s    Ativar Janela
 
     Send Keys    keys={ENTER}
-    Sleep        5s
 
     wait until keyword succeeds    30s    2s    Ativar Janela
 
     send keys    keys={ENTER}
-    Sleep        2s
 
 Pegar Mensagem
     [Arguments]    ${trecho}
@@ -194,4 +177,4 @@ Verificar Mensagens
 Enviar Teclas
     [Arguments]    ${teclas}
     ${cmd}=    Set Variable    powershell -NoProfile -Command "$p = Get-Process -Name AtxExec | Where-Object { $_.MainWindowHandle -ne 0 -and $_.MainWindowTitle -notmatch 'Configuração' } | Sort-Object StartTime -Descending | Select-Object -First 1; $ws = New-Object -ComObject WScript.Shell; $ws.AppActivate($p.Id); Start-Sleep -Milliseconds 500; $ws.SendKeys('${teclas}')"
-    Run Process    ${cmd}    shell=True  
+    Run Process    ${cmd}    shell=True

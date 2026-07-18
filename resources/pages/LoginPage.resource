@@ -21,9 +21,8 @@ Selecionar Turno
     Clicar Na Imagem    ${IMAGENS_LOGIN}/mensagem-ok.png
 
 Efetuar Login Completo
-    [Documentation]    Fluxo completo: abrir sistema + login + selecionar turno
+    [Documentation]    Fluxo completo: login + selecionar turno (sistema deve estar aberto)
     [Arguments]    ${usuario}    ${senha}
-    Abrir Sistema
     Aguardar Janela Ativa
     Clicar Em Continuar Servidor
     Fazer Login    ${usuario}    ${senha}
