@@ -10,6 +10,7 @@ Resource   keywords/Keyboard.resource
 Resource   keywords/Wait.resource
 Resource   keywords/Validation.resource
 Resource   keywords/Menu.resource
+Resource   keywords/Generica.resource
 
 *** Keywords ***
 Abrir Sistema
