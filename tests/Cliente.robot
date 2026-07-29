@@ -24,9 +24,7 @@ Alterar Dados do Cliente
     Abrir Gerenciamento de Entidades
     Pesquisar Cliente    Cliente Teste
     Editar Cadastro do Cliente
-    Log To Console    Estou aqui
     Alterar Cadastro do Cliente - Aba Principal    82422490085    Cliente Editado
-    Log To Console    Estou aqui depois da edição
     Salvar Cliente
     Fechar Gerenciamento de Entidades
 

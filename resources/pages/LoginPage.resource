@@ -14,11 +14,16 @@ Fazer Login
     Clicar Na Imagem    ${IMAGENS_LOGIN}/botao-entrar.png
 
 Selecionar Turno
-    Aguardar Imagem Aparecer    ${IMAGENS_LOGIN}/botao-selecionar.png    30
-    Clicar Na Imagem    ${IMAGENS_LOGIN}/botao-selecionar.png
-    Clicar Na Imagem    ${IMAGENS_LOGIN}/ok.png
-    Aguardar Imagem Aparecer    ${IMAGENS_LOGIN}/mensagem-ok.png    30
-    Clicar Na Imagem    ${IMAGENS_LOGIN}/mensagem-ok.png
+    [Arguments]    ${turno}
+    IF    '${turno}' == '0'
+        Aguardar Imagem Aparecer    ${IMAGENS_LOGIN}/botao-selecionar.png    30
+        Clicar Na Imagem    ${IMAGENS_LOGIN}/botao-selecionar.png
+        Clicar Na Imagem    ${IMAGENS_LOGIN}/ok.png
+        Aguardar Imagem Aparecer    ${IMAGENS_LOGIN}/mensagem-ok.png    30
+        Clicar Na Imagem    ${IMAGENS_LOGIN}/mensagem-ok.png
+    ELSE 
+        ${data_hoje}    Get Current Date    format=%d/%m/%Y
+    END
 
 Efetuar Login Completo
     [Documentation]    Fluxo completo: login + selecionar turno (sistema deve estar aberto)

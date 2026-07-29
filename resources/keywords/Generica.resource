@@ -11,7 +11,9 @@ Limpar Campo De Pesquisa
     [Documentation]    Limpa o campo de pesquisa
     Aguardar Imagem Aparecer    ${imagem}    10
     Clicar Na Imagem            ${imagem}
-    Pressionar Tecla            +{HOME}
+    Sleep    1s
+    Pressionar Tecla            {HOME}
+    Pressionar Tecla            +{END}
     Pressionar Tecla            {BACKSPACE}
 
 Limpar Campo De Texto

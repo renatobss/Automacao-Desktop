@@ -5,4 +5,5 @@ ${SENHA}       a
 
 ${IMAGENS_LOGIN}      ${CURDIR}/../images/Login
 ${IMAGENS_CLIENTE}    ${CURDIR}/../images/Clientes/Entidades
+${IMAGENS_CIDADE}     ${CURDIR}/../images/Utilitarios/Cidades
 ${IMAGENS_COMUM}      ${CURDIR}/../images/Comum

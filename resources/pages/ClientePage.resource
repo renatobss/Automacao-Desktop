@@ -71,10 +71,15 @@ Salvar Cliente
 
 Deletar Cliente
     [Documentation]    Deleta o cadastro do cliente
+    ${existe_antes}=    Run Keyword And Return Status    Screen Should Contain    ${IMAGENS_CLIENTE}/cliente-deletado.png
+    Log To Console    Registro existe antes da deleção: ${existe_antes}
+    Run Keyword If    not ${existe_antes}    Fail    Registro não encontrado na grid antes da deleção
     Aguardar Imagem Aparecer    ${IMAGENS_COMUM}/botao-deletar.png    10
     Clicar Na Imagem            ${IMAGENS_COMUM}/botao-deletar.png
     Pressionar Tecla            %s
+    Aguardar Imagem Desaparecer    ${IMAGENS_CLIENTE}/cliente-deletado.png    20
     Limpar Campo De Pesquisa        ${IMAGENS_CLIENTE}/pesquisar-cliente.png
+    
 
 Editar Cadastro do Cliente   
     [Documentation]    Abre o cadastro de cliente para edição
