@@ -2,6 +2,8 @@
 Library    SikuliLibrary
 Library    RPA.Windows
 Library    Process
+Library    String
+Library    DateTime
 Resource   Variables.resource
 Resource   pages/LoginPage.resource
 Resource   keywords/Controle.resource
